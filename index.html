@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHY TOTEM EDITOR</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>SHY TOTEM EDITOR</h1>
+
+    <label class="upload-btn">
+        Choose Your Skin
+        <input type="file" id="skinInput" accept=".png" hidden>
+    </label>
+
+    <div id="loading" class="hidden">
+        Generating Totem...
+    </div>
+
+    <canvas id="preview" width="128" height="128"></canvas>
+
+    <button id="downloadBtn" class="hidden">
+        Download Texture Pack
+    </button>
+
+    <p class="footer">Made by Shyvansh</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
