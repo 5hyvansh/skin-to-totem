@@ -1,0 +1,195 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Akshu ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  overflow:hidden;
+  background:linear-gradient(135deg,#ff9ecf,#c084fc,#89cff0);
+  height:100vh;
+}
+
+/* Floating Hearts */
+.hearts{
+  position:fixed;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.heart{
+  position:absolute;
+  color:#fff;
+  font-size:20px;
+  animation:float 10s linear infinite;
+}
+
+@keyframes float{
+  from{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+  to{
+    transform:translateY(-100px);
+    opacity:1;
+  }
+}
+
+/* Welcome Screen */
+#welcome{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+h1{
+  font-size:3rem;
+  text-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+p{
+  margin-top:15px;
+  font-size:1.2rem;
+}
+
+button{
+  margin-top:35px;
+  padding:15px 35px;
+  border:none;
+  border-radius:50px;
+  font-size:1.1rem;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+button:hover{
+  transform:scale(1.08);
+}
+
+/* Main Message */
+#main{
+  display:none;
+  position:absolute;
+  width:100%;
+  height:100%;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:30px;
+}
+
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-radius:25px;
+  padding:40px;
+  max-width:700px;
+  box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
+
+.card h2{
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+
+.card p{
+  line-height:1.8;
+  font-size:1.1rem;
+}
+</style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- Song -->
+<audio id="bgMusic" loop>
+  <source src="Aaj Se Teri-1-Downringtone.com.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Welcome Screen -->
+<div id="welcome">
+  <h1>For Akshu ❤️</h1>
+  <p>Someone made something special just for you...</p>
+  <button id="enterBtn">Open Your Surprise ❤️</button>
+</div>
+
+<!-- Main Screen -->
+<div id="main">
+  <div class="card">
+    <h2>Hi Akshu ❤️</h2>
+
+    <p>
+      This little website is made especially for you.<br><br>
+
+      You make ordinary moments feel magical and your smile
+      has a way of making everything better.<br><br>
+
+      Thank you for being such a wonderful part of my life.
+      I hope this small surprise brings a smile to your face.
+      ❤️✨
+      <br><br>
+      Made with ❤️ by Shivansh
+    </p>
+  </div>
+</div>
+
+<script>
+// Floating Hearts
+const hearts = document.getElementById("hearts");
+
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  hearts.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}, 400);
+
+// Open Surprise + Play Music
+const enterBtn = document.getElementById("enterBtn");
+const welcome = document.getElementById("welcome");
+const main = document.getElementById("main");
+const music = document.getElementById("bgMusic");
+
+enterBtn.addEventListener("click", () => {
+  music.play();
+
+  welcome.style.display = "none";
+  main.style.display = "flex";
+
+  document.body.style.overflow = "hidden";
+});
+</script>
+
+</body>
+</html>
+```
